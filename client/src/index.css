@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0C1215;
+    --surface: #141C20;
+    --surface-raised: #1B2429;
+    --border: #243036;
+    --border-strong: #334349;
+    --text: #E4ECEE;
+    --text-muted: #92A5AC;
+    --text-faint: #6E838B;
+    --accent: #3CC5A8;
+    --accent-hover: #4FD9BB;
+    --accent-soft: #123029;
+    --warn: #D79052;
+    --danger: #E06C6C;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not(.dark) {
+      --bg: #ECEFF1;
+      --surface: #FFFFFF;
+      --surface-raised: #F4F6F7;
+      --border: #D5DDE0;
+      --border-strong: #B9C5CA;
+      --text: #111A1E;
+      --text-muted: #55677F;
+      --text-faint: #7F9097;
+      --accent: #0E7A68;
+      --accent-hover: #0B6252;
+      --accent-soft: #D7EBE6;
+      --warn: #9A5518;
+      --danger: #B4433F;
+    }
+  }
+
+  /* Optional explicit light/dark classes for toggle */
+  :root.light {
+    --bg: #ECEFF1;
+    --surface: #FFFFFF;
+    --surface-raised: #F4F6F7;
+    --border: #D5DDE0;
+    --border-strong: #B9C5CA;
+    --text: #111A1E;
+    --text-muted: #55677F;
+    --text-faint: #7F9097;
+    --accent: #0E7A68;
+    --accent-hover: #0B6252;
+    --accent-soft: #D7EBE6;
+    --warn: #9A5518;
+    --danger: #B4433F;
+  }
+
+  :root.dark {
+    --bg: #0C1215;
+    --surface: #141C20;
+    --surface-raised: #1B2429;
+    --border: #243036;
+    --border-strong: #334349;
+    --text: #E4ECEE;
+    --text-muted: #92A5AC;
+    --text-faint: #6E838B;
+    --accent: #3CC5A8;
+    --accent-hover: #4FD9BB;
+    --accent-soft: #123029;
+    --warn: #D79052;
+    --danger: #E06C6C;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+}
