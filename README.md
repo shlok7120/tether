@@ -27,11 +27,13 @@ sequenceDiagram
     Receiver browser->>Signalling server: SDP answer
     Signalling server->>Sender browser: SDP answer
 
-    Sender browser<->Signalling server: ICE candidates
-    Signalling server<->Receiver browser: ICE candidates
+    Sender browser->>Signalling server: ICE candidates
+    Signalling server->>Sender browser: ICE candidates
+    Receiver browser->>Signalling server: ICE candidates
+    Signalling server->>Receiver browser: ICE candidates
     
     Note over Sender browser,Receiver browser: Direct DTLS Encrypted Connection
-    Sender browser=>>Receiver browser: RTCDataChannel (File Bytes)
+    Sender browser->>Receiver browser: RTCDataChannel (File Bytes)
 ```
 
 ## Local Setup
