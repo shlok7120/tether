@@ -23,12 +23,12 @@ export function TransferProvider({ children }: { children: ReactNode }) {
   const [files, setFiles] = useState<File[]>([]);
   const [forceRelay, setForceRelay] = useState(false);
 
-  const peer = usePeerConnection(`ws://${window.location.hostname}:8080`, forceRelay);
+  const wsUrl = import.meta.env.VITE_WS_URL || (window.location.protocol === 'https:' ? 'wss:' : 'ws:') + `//${window.location.hostname}:8080`;
+  const peer = usePeerConnection(wsUrl, forceRelay);
   
   // URL auto-fill
   const queryParams = new URLSearchParams(window.location.search);
   const initialCode = queryParams.get("code");
-  
   const [view, setView] = useState<ViewState>(initialCode ? "receiver-room" : "landing");
 
   return (
